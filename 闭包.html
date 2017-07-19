@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		// function f1 (num) {
+		// 	if (num<1) {
+		// 		return 1;
+		// 	} else {
+		// 		return num*f1(num-1);
+		// 	}
+		// }
+		var ab = f1;
+		f1 = null;
+		alert(ab(4));
+		// 报错  因为f1已经等于null了 不是函数
+		// function f1 (num) {
+		// 	if (num<1) {
+		// 		return 1;
+		// 	} else {
+		// 		return num * arguments.callee(num-1);
+		// 	}
+		// }
+		//arguments.callee指向正在执行的函数的指针
+		//在严格模式下，不能通过脚本访问arguments.callee
+		var ab = function f1 (num) {
+			if (num<1) {
+				return 1;
+			} else {
+				return num * f1(num-1);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>解析赋值</title>
+</head>
+<body>
+	<script>
+		// var [a,b,c,d] = [1,2,3];
+		// console.log(d);
+		// let [x,y,z] = new Set(['a','b','c']);
+		// console.log(z);
+		// var [x = 1] = [undefined]; //x = 1
+		// var [x = 1] = [null];// x = null
+		// console.log(x);
+		let foo;
+		// let {foo} = {foo:1};//报错  对于let const命令，变量不能重新声明，一旦赋值的变量以前声明过，就会报错
+		({foo} = {foo:1});//foo=1
+		// console.log(foo);
+		var obj = {
+			p: [
+				'hello',
+				{y:'world'}
+			]
+		}
+		var {p:[x,{y}]} = obj;
+		// console.log(x);
+		const [a,b,c,d] = 'hell';
+		// console.log(a);
+		var x = 3;
+		var y = 5;
+		[x,y] = [y,x];
+		console.log(x);
+		function example () {
+			return [1,2,3];
+		}
+		var [e,f,g] = example();
+		console.log(e);
+		function aa({x,y,z}) {
+			return z;
+		}
+		console.log(aa({z:3,y:1,x:2}));
+
+
+	</script>
+</body>
+</html>
