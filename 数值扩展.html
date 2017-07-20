@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数值扩展</title>
+</head>
+<body>
+	<script>
+		a = Number.isFinite(15);//TRUE
+		a = Number.isFinite(NaN);//FALSE
+		a = Number.isNaN(5);//FALSE
+		a = Number.isNaN(NaN);//TRUE
+		console.log(a);
+		b = parseInt(12.11);//es5写法
+		b = Number.parseInt(13.11);//es6写法
+		c = parseFloat('111.2a')//es5写法
+		c = Number.parseFloat('12.aa');//es6写法
+		console.log(b);
+		console.log(c);
+		d = Number.isInteger(12.000);//true
+		d = Number.isInteger(12.1);//false
+		console.log(d);
+		e = Number.EPSILON;//2.220446049250313e-16
+		console.log(e);
+		f = Math.trunc(4.1);//4
+		f = Math.trunc('-1.1');//-1
+		f = Math.trunc('f00');//NAN
+		f = Math.trunc('');//0
+		f = Math.trunc();//NAN
+
+		console.log(f);
+	</script>
+</body>
+</html>
