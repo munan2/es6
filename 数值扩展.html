@@ -27,8 +27,17 @@
 		f = Math.trunc('f00');//NAN
 		f = Math.trunc('');//0
 		f = Math.trunc();//NAN
-
 		console.log(f);
+		g = Math.sign(-5); //-1
+		g = Math.sign(0); //0
+		g = Math.sign(6); //1
+		g = Math.sign(NaN); //NaN
+		g = Math.sign('字符'); //NaN
+		g = Math.sign('12'); //1
+		g = Math.sign(); //NaN
+		g = Math.sign(-0); //-0
+
+		console.log(g);
 	</script>
 </body>
 </html>
